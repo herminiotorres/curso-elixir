@@ -42,7 +42,9 @@ defmodule ExMon.MixProject do
       {:telemetry_poller, "~> 0.4"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:credo, "~> 1.5.0-rc.4", only: [:dev, :test], runtime: false},
+      {:argon2_elixir, "~> 2.3"}
     ]
   end
 
