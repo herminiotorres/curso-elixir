@@ -11,10 +11,11 @@ defmodule ExMon.Trainer do
   end
 
   @required_params [:name, :password_hash]
-  
+
   def changeset(params) do
     %__MODULE__{}
     |> cast(params, @required_params)
     |> validate_required(@required_params)
+    |> validate_length(:password_hash, min: 6)
   end
 end
