@@ -3,6 +3,12 @@ defmodule ExMonWeb.TrainerPokemonsController do
 
   action_fallback ExMonWeb.FallbackController
 
+  def show(conn, %{"id" => id}) do
+    id
+    |> ExMon.fetch_trainer_pokemon()
+    |> handle_response(conn, "show.json", :ok)
+  end
+
   def create(conn, params) do
     params
     |> ExMon.create_trainer_pokemon()
