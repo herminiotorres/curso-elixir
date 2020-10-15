@@ -1,3 +1,2 @@
-alias ExMon.Repo
-alias ExMon.Trainer
+alias ExMon.{Pokemon, Repo, Trainer}
 alias ExMon.PokeAPI.Client
