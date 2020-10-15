@@ -4,14 +4,14 @@ defmodule ExMon.Trainer.Get do
 
   def call(id) do
     case UUID.cast(id) do
-      :error -> {:error, "Invalid ID format."}
+      :error -> {:error, "Invalid ID Format"}
       {:ok, uuid} -> get(uuid)
     end
   end
 
   defp get(uuid) do
     case Repo.get(Trainer, uuid) do
-      nil -> {:error, "Trainer not found."}
+      nil -> {:error, "Trainer Not Found"}
       trainer -> {:ok, trainer}
     end
   end

@@ -4,14 +4,14 @@ defmodule ExMon.Trainer.Update do
 
   def call(%{"id" => uuid} = params) do
     case UUID.cast(uuid) do
-      :error -> {:error, "Invalid ID format"}
+      :error -> {:error, "Invalid ID Format"}
       {:ok, _uuid} -> update(params)
     end
   end
 
   defp update(%{"id" => uuid} = params) do
     case fetch_trainer(uuid) do
-      nil -> {:error, "Trainer not found."}
+      nil -> {:error, "Trainer Not Found"}
       trainer -> update_trainer(trainer, params)
     end
   end
